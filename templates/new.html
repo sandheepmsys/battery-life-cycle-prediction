@@ -1,0 +1,61 @@
+{% extends 'main.html' %}
+{% block content %}
+{% if message %}
+        <div class="alert alert-danger">{{ message }}</div>
+    {% endif %}
+<html>
+<head>
+	<title> Battery management system </title>
+	<style >
+html { width: 100%; height:100%; overflow:visible; }
+
+body { 
+	width: 100%;
+	height:100%;
+	font-family: 'Open Sans', sans-serif;
+	background: #092756;
+	color: #fff;
+	font-size: 18px;
+	text-align: justify;
+letter-spacing:1.2px;
+	
+	background: linear-gradient(to bottom, #3F364E, #3F364E);
+
+}
+</style>
+</head>
+<body>
+	Due to the long life, high energy density, fast charging speed, and high voltage, lithium-ion
+batteries have become an significant part of  energy storage batteries in
+a new energy field. However, the safety and reliability for equipment highly depends on the
+health performance of energy storage batteries. As the main energy storage equipment, lithium-ion
+batteries will age gradually in actual use  which could lead to performance degeneration or even
+failure . Failure of the lithium-ion batteries could result in inconvenience, equipment downtime,
+or even catastrophic accident. Therefore, it is necessary to take measures to ensure the reliability
+and safety for lithium-ion batteries. Engineering practice shows that the prognostics and health
+management (PHM) can improve the equipment reliability by implementing necessary management
+actions before failure. The remaining useful life (RUL) prediction and state of health
+(SOH) monitoring are two important parts in PHM of lithium-ion battery. This model helps you to predict State of health and remaining useful life (RUL) prediction which can estimate the failure time and mitigate the risk for lithium-ion batteries by assessing the battery health , which is a key issue
+in order to make appropriate maintenance strategies and reduce accident risk . 
+<br><br>
+
+<b><p style="background:#003399;padding: 4px;">DATA DESCRIPTION</b></p>The following datas are needed for the effective prediction of cycle.
+        <ul>
+            <b><li>Discharge maximum temperature </li></b>
+<ul> The maximum time taken by the discharge cycle in seconds. </ul>
+
+							 <b><li>Discharge minimum threshold voltage time</li></b>
+<ul> The time (in seconds) at which the voltage reaches the minimum threshold in  the discharge cycle.</ul>
+							 <b><li>Charge maximum threshold voltage time.</li></b>
+<ul> The time (in seconds) at which the voltage reaches the maximum threshold in  the charge cycle.</ul>
+	<br><br>
+<div style="text-align: left; margin-left: -3%;">
+	<b><p style="background:#003399;padding: 4px">ABOUT</b></p>
+This prediction is based on the data driven method for the accurate prediction of the capacity and the remaining useful cycle. The model is trained on the NASA battery dataset where a Li-ion battery was  run through 3 different operational profiles (charge, discharge and impedance) at room temperature where Charging was carried out in a constant current mode at 1.5A until the battery voltage reached 4.2V and then continued in a constant voltage  mode until the charge current dropped to 20mA and Discharge was carried out at a constant current level of 2A until the battery voltage fell to 2.7V. This model is found to provide accurate predictions upto 99% for the batteries. 
+	<br> <br>
+<center><div class="col-md-4"><a href="{{ url_for('predictor') }}" class="btn btn-block btn-primary">GO TO PREDICTOR</a></div></center>
+</div>
+</body>
+
+</html>
+{% endblock %}

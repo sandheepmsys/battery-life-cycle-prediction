@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>Battery predictor</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <style>
+    html, body{ height:100%; margin:0; }
+header{ height:50px;}
+footer{ height:75px; background:black; }
+
+/* Trick */
+body{ 
+  display:flex; 
+  flex-direction:column; 
+}
+
+footer{
+  padding:10px;
+  margin-top:auto;
+  margin-bottom: auto; 
+}
+  </style>
+
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" style="background-color: #003399 !important;">
+        <a href="{{ url_for('home') }}"></a> <div style= "color:white"> <h2><b><center > BATTERY LIFE PREDICTION </center></div></b></h2>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+           <ul class="navbar-nav ml-auto">
+             <li class="nav-item active">
+               <a href="{{ url_for('home') }}" class="nav-link"><b>HOME</a></b>
+             </li>
+             
+              <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('predictor') }}"> <b>PREDICTOR </a></b>
+              </li>
+              
+           </ul>
+         </div>
+       </nav>
+	<br>
+<br>
+<br>
+
+<main>
+	<div class="container-fluid" style="margin-bottom: 20px;">
+	{% block content %}
+
+	{% endblock %}
+    </div>
+  </main>
+ 
+</body>
+</html>
